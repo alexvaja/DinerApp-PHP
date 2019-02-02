@@ -11,7 +11,6 @@ abstract class Model
 
     public function newDbCon($resultAsArray = false)
     {
-
         $dsn = Config::DB['driver'];
         $dsn .= ":host=".Config::DB['host'];
         $dsn .= ";dbname=".Config::DB['dbname'];
@@ -33,9 +32,6 @@ abstract class Model
         } catch (PDOException $e) {
             throw new PDOException($e->getMessage(), (int)$e->getCode());
         }
-
-
-
     }
 
     /**
@@ -125,7 +121,6 @@ abstract class Model
 
             $i++;
         }
-
         return [$columns, $values];
     }
 
@@ -170,7 +165,4 @@ abstract class Model
 
         return $stmt->execute([$id]);
     }
-
-
-
 }
