@@ -10,5 +10,5 @@ $routes = [
     '/login' => ['controller' => 'LoginController', 'action' => 'loginPage'],
     '/login/auth' =>['controller' => 'LoginController', 'action' => 'loginUser'],
 
-    
+    //aici injur decent clasa router.
 ];

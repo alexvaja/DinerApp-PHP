@@ -4,6 +4,7 @@ namespace App;
 class Config
 {
     const ENV = "dev";
+
     const DB = [
         "driver"  => "mysql",
         'host'    => 'localhost',
@@ -14,3 +15,5 @@ class Config
         'pass'    => ''
     ];
 }
+
+
