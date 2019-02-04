@@ -12,18 +12,13 @@ class User extends Model
         $pdo = $this->newDbCon();
         $sql = "SELECT * FROM $this->table";
         $stmt = $pdo -> prepare($sql);
-        Model::
         return $stmt->fetchAll();
     }
 
-    public function registerUser($first_name, $second_name, $email, $pass) : bool
+    public function registerUser($first_name, $second_name, $email, $password)
     {
-        $pdo = $this->newDbCon();
-        $sql = "INSERT INTO $this->table (first_name, second_name, email, password) VALUES(?, ?, ?, ?)";
-        $password = password_hash($pass, PASSWORD_DEFAULT);
-        $stmt = $pdo -> prepare($sql);
-        $stmt -> execute([$first_name, $second_name, $email, $password]);
-        return true;
+        $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
+        Model::new(["second_name" => $second_name, "first_name" => $first_name, "email" => $email, "password" => $hashed_pass]);
     }
 
 //    public function searchForUserAtLogin(string $email, $password)

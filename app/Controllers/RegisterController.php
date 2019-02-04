@@ -1,35 +1,39 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sabau
- * Date: 02-Feb-19
- * Time: 5:53 PM
- */
 
 namespace App\Controllers;
-
 
 use App\Models\User;
 use Framework\Controller;
 
 class RegisterController extends Controller
 {
-
-    public function checkInputDataIsEmpty($second_name, $first_name, $email, $password) : bool
+    function receivedExpectedParameters() : bool
     {
-        if (!empty($second_name) && !empty($first_name) && !empty($email) && !empty($password))
+        return (isset($_POST["registerLastName"]) && isset($_POST["registerEmail"]) && isset($_POST["registerPassword"]) && isset($_POST["registerFirstName"]));
+    }
+
+    function isEmailValid(string $email) : bool
+    {
+        return !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
+    }
+
+    function isPasswordValid(string $password) : bool
+    {
+        return !empty($password) && strlen($password) >= 6;
+    }
+
+    //
+    public function checkInputDataIsEmpty(string $last_name, $first_name, $email, $password) : bool
+    {
+        if (!empty($last_name) && !empty($first_name) && !empty($email) && !empty($password))
         {
             return true;
         }
         return false;
     }
 
-    public function checkEmailIsUnique($inputEmail) : bool
+    public function checkEmailIsUnique($var) : bool
     {
-        $user = new User();
-
-        $var = $user->getRowByField('email', $inputEmail);
-
         if ($var->email == null)
         {
             return true;
@@ -46,24 +50,25 @@ class RegisterController extends Controller
     {
         $user = new User();
 
-        $second_name = $_POST["registerLastName"];
+        $last_name = $_POST["registerLastName"];
         $first_name = $_POST["registerFirstName"];
         $email = $_POST["registerEmail"];
         $password = $_POST["registerPassword"];
 
         $var = $user->find(["email" => $email]);
 
-        var_dump($user->find(["email" => $email]));
+        //var_dump($user->find(["email" => $email]));
 
-        if($this->checkInputDataIsEmpty($second_name,$first_name,$email,$password))
+        if($this->checkInputDataIsEmpty($last_name,$first_name,$email,$password))
         {
-            if ($this->checkEmailIsUnique($email))
+            if ($this->checkEmailIsUnique($var))
             {
-                $user->registerUser($second_name, $first_name, $email, $password);
-                echo $this->view("pages/authenticatedUser.html", ["second_name" => $second_name, "first_name" => $first_name, "email" => $email]);
+                $user->registerUser($last_name, $first_name, $email, $password);
+                echo $this->view("pages/authenticatedUser.html", ["second_name" => $last_name, "first_name" => $first_name, "email" => $email]);
             }
             else
             {
+                echo $this->view("pages/register.html");
                 echo "This email is already saved in data base!";
             }
         }

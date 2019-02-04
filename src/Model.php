@@ -63,6 +63,9 @@ abstract class Model
      * This function will prepare data to be used in sql statement
      * 1. Will extract values from $data
      * 2. Will create the prepared sql string with columns from $data
+     * @param array $data
+     * @param bool $like
+     * @return array
      */
     protected function prepareDataSearchForStmt(array $data, bool $like): array
     {
@@ -80,7 +83,7 @@ abstract class Model
             $columns .= $key . $searchStr . "?";
             //if we are not at the last element with the iteration
             if($i < (count($data))) {
-                $columns .= "AND ";
+                $columns .= " AND ";
             }
 
             $i++;

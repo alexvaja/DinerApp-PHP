@@ -14,6 +14,15 @@ use Framework\Controller;
 
 class LoginController extends Controller
 {
+    public function searchedEmail($var) : bool
+    {
+        if ($var->email == null)
+        {
+            return false;
+        }
+        return true;
+    }
+
     public function loginPage()
     {
         echo $this->view("pages/login.html");
@@ -21,21 +30,30 @@ class LoginController extends Controller
 
     public function loginUser()
     {
-        $second_name = "pula";
-        $first_name = "mea";
+        $user = new User();
         $email = $_POST["loginEmail"];
         $password = $_POST["loginPassword"];
 
-        $user = new User();
-        //$user->searchForUserAtLogin($email,$parola)
+//        $emailFromDatabase = $user->getRowByField('email', $email);
+//        $passwordFromDatabase = $user->getRowByField('password', $password);
 
-        if(true)
+        $var = $user->find(["email" => $email]);
+
+        if ($this->searchedEmail($var))
         {
-            echo $this->view("pages/authenticatedUser.html", ["second_name" => $second_name, "first_name" => $first_name, "email" => $email]);
+            if (password_verify($password, $var->password))
+            {
+                echo $this->view("pages/authenticatedUser.html", ["Email" => $email]);
+            }
+            else
+            {
+                header("Location: /login");
+            }
         }
         else
         {
-            header("Location: /login");
+            echo $this->view("pages/login.html");
+            echo "There is no account with this e-mail";
         }
     }
 }
