@@ -7,7 +7,16 @@ class User extends Model
 {
     protected $table = 'users';
 
-    public function registerUser(string $first_name, $second_name, $email, $pass) : bool
+    public function getAllEmailsFromDB()
+    {
+        $pdo = $this->newDbCon();
+        $sql = "SELECT * FROM $this->table";
+        $stmt = $pdo -> prepare($sql);
+        Model::
+        return $stmt->fetchAll();
+    }
+
+    public function registerUser($first_name, $second_name, $email, $pass) : bool
     {
         $pdo = $this->newDbCon();
         $sql = "INSERT INTO $this->table (first_name, second_name, email, password) VALUES(?, ?, ?, ?)";

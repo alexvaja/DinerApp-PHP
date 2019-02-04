@@ -35,7 +35,7 @@ abstract class Model
     }
 
     /**
-     *Return all data from table
+     * Return all data from table
      */
     public function getAll(): array
     {
@@ -46,7 +46,9 @@ abstract class Model
     }
 
     /**
-     *Return data with specified id/index
+     * Return data with specified id/index
+     * @param $id
+     * @return mixed
      */
     public function get($id)
     {
@@ -58,7 +60,7 @@ abstract class Model
     }
 
     /**
-     * this function will prepare data to be used in sql statement
+     * This function will prepare data to be used in sql statement
      * 1. Will extract values from $data
      * 2. Will create the prepared sql string with columns from $data
      */
@@ -88,15 +90,18 @@ abstract class Model
     }
 
     /**
-     *Find data with values
+     * Find data with values
      * if $like is not set it will search using the = sql operator
      * if $like is set it will search using the LIKE sql operator
      *
      * return false or an object
+     * @param array $data
+     * @param bool $like
+     * @return mixed
      */
     public function find(array $data, bool $like = false)
     {
-        list($columns, $values) = $this->prepareDataForSearchStmt($data, $like);
+        list($columns, $values) = $this->prepareDataSearchForStmt($data, $like);
 
         $db = $this->newDbCon();
         $stmt = $db->prepare("SELECT * from $this->table where $columns");
@@ -105,6 +110,11 @@ abstract class Model
         return $stmt->fetch();
     }
 
+    /**
+     *
+     * @param array $data
+     * @return array
+     */
     private function prepareStmt(array $data): array
     {
         $i = 1;
@@ -126,6 +136,8 @@ abstract class Model
 
     /**
      * Insert new data in table
+     * @param array $data
+     * @return int
      */
     public function new(array $data): int
     {
@@ -141,6 +153,9 @@ abstract class Model
 
     /**
      * Update data in table
+     * @param array $where
+     * @param array $data
+     * @return bool
      */
     public function update(array $where, array $data): bool
     {
@@ -157,6 +172,8 @@ abstract class Model
 
     /**
      * Delete data from table
+     * @param int $id
+     * @return bool
      */
     public function delete(int $id): bool
     {

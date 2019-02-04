@@ -15,9 +15,22 @@ use Framework\Controller;
 class RegisterController extends Controller
 {
 
-    private function checkInputDataIsEmpty($second_name, $first_name, $email, $password) : bool
+    public function checkInputDataIsEmpty($second_name, $first_name, $email, $password) : bool
     {
-        if(!empty($second_name) && !empty($first_name) && !empty($email) && !empty($password))
+        if (!empty($second_name) && !empty($first_name) && !empty($email) && !empty($password))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function checkEmailIsUnique($inputEmail) : bool
+    {
+        $user = new User();
+
+        $var = $user->getRowByField('email', $inputEmail);
+
+        if ($var->email == null)
         {
             return true;
         }
@@ -38,13 +51,21 @@ class RegisterController extends Controller
         $email = $_POST["registerEmail"];
         $password = $_POST["registerPassword"];
 
-        $user->registerUser($second_name, $first_name, $email, $password);
+        $var = $user->find(["email" => $email]);
 
-        if(checkInputDataIsEmpty($second_name, $first_name, $email, $password))
+        var_dump($user->find(["email" => $email]));
+
+        if($this->checkInputDataIsEmpty($second_name,$first_name,$email,$password))
         {
-            //fac querry dupa email si daca nu mai exista e totul ok
-            //aici fac validarile
-            echo $this->view("pages/authenticatedUser.html", ["second_name" => $second_name, "first_name" => $first_name, "email" => $email]);
+            if ($this->checkEmailIsUnique($email))
+            {
+                $user->registerUser($second_name, $first_name, $email, $password);
+                echo $this->view("pages/authenticatedUser.html", ["second_name" => $second_name, "first_name" => $first_name, "email" => $email]);
+            }
+            else
+            {
+                echo "This email is already saved in data base!";
+            }
         }
         else
         {
