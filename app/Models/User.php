@@ -7,13 +7,14 @@ class User extends Model
 {
     protected $table = 'users';
 
-    public function registerUser(string $first_name, $second_name, $email, $pass)
+    public function registerUser(string $first_name, $second_name, $email, $pass) : bool
     {
         $pdo = $this->newDbCon();
-        $sql = "INSERT INTO $this->table (nume, prenume, email, paroa) VALUES(?, ?, ?, ?)";
+        $sql = "INSERT INTO $this->table (first_name, second_name, email, password) VALUES(?, ?, ?, ?)";
         $password = password_hash($pass, PASSWORD_DEFAULT);
         $stmt = $pdo -> prepare($sql);
         $stmt -> execute([$first_name, $second_name, $email, $password]);
+        return true;
     }
 
 //    public function searchForUserAtLogin(string $email, $password)
