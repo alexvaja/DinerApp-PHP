@@ -11,8 +11,8 @@ $routes = [
     '/login' => ['controller' => 'LoginController', 'action' => 'loginPage'],
     '/login/auth' =>['controller' => 'LoginController', 'action' => 'loginUser'],
 
-    '/main-page' => ['controller' => 'MainPageController', 'action' => 'loadMainPage'],
-    '/main-page/action' => ['controller' => 'MainPageController', 'action' => 'loadAction'],
+    '/main-page' => ['controller' => 'MainPageController', 'action' => 'loadMainPage', 'guard' => 'Authenticated'],
+    '/main-page/action' => ['controller' => 'MainPageController', 'action' => 'mainPageAction', 'guard' => 'Authenticated'],
 
     '/main-page/category' => ['controller' => 'CategoryController', 'action' => 'loadCategoryPage'],
     '/main-page/category/action' => ['controller' => 'CategoryController', 'action' => 'addCategory'],

@@ -43,7 +43,7 @@ class LoginController extends Controller
                 $_SESSION["email"] = $email;
                 $_SESSION["first_name"] = $var->first_name;
                 $_SESSION["last_name"] = $var->last_name;
-
+                //echo $_SESSION["email"];
                 //echo $this->view(["last_name" => "Vasile", "first_name" => "Lupul", "email" => $email]);
                 header("Location: /main-page");
             }
