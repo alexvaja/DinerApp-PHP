@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5bd1107a-ded2-4252-bfa7-867964d98b07" name="Default Changelist" comment="Shit">
       <change beforePath="$PROJECT_DIR$/app/Views/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/pages/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +19,20 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/public/template.html">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="427">
                     <caret line="23" column="90" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="90" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/Views/pages/register.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="288">
+                    <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
                   </state>
                 </provider>
               </entry>
@@ -73,17 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Views/pages/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Food.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            <state relative-caret-position="275">
+              <caret line="33" column="83" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -164,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/Model.php" />
         <option value="$PROJECT_DIR$/app/Views/layout.html" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/app/Views/pages/register.html" />
         <option value="$PROJECT_DIR$/app/Controllers/RegisterController.php" />
         <option value="$PROJECT_DIR$/app/Controllers/MainPageController.php" />
         <option value="$PROJECT_DIR$/app/Controllers/PageController.php" />
@@ -182,6 +182,7 @@
         <option value="$PROJECT_DIR$/public/stylesheet.css" />
         <option value="$PROJECT_DIR$/public/template.html" />
         <option value="$PROJECT_DIR$/app/Views/pages/login.html" />
+        <option value="$PROJECT_DIR$/app/Views/pages/register.html" />
       </list>
     </option>
   </component>
@@ -298,6 +299,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunDashboard">
@@ -329,12 +331,12 @@
       <workItem from="1549118942021" duration="7675000" />
       <workItem from="1549143183582" duration="6404000" />
       <workItem from="1549262376976" duration="27319000" />
-      <workItem from="1549356581901" duration="11964000" />
+      <workItem from="1549356581901" duration="12582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67458000" />
+    <option name="totallyTimeSpent" value="68076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1362" y="3" width="1693" height="1014" extended-state="0" />
@@ -435,13 +437,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Views/pages/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/RegisterController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -568,13 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Views/pages/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -606,10 +594,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Views/pages/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Views/pages/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        <state relative-caret-position="275">
+          <caret line="33" column="83" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Views/pages/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
         </state>
       </provider>
     </entry>
