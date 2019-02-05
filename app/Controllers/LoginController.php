@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sabau
- * Date: 02-Feb-19
- * Time: 6:21 PM
- */
 
 namespace App\Controllers;
-
 
 use App\Models\User;
 use Framework\Controller;
@@ -31,19 +24,28 @@ class LoginController extends Controller
     public function loginUser()
     {
         $user = new User();
+
         $email = $_POST["loginEmail"];
         $password = $_POST["loginPassword"];
-
-//        $emailFromDatabase = $user->getRowByField('email', $email);
-//        $passwordFromDatabase = $user->getRowByField('password', $password);
+        $reqParam = $_POST["submit"];
 
         $var = $user->find(["email" => $email]);
 
-        if ($this->searchedEmail($var))
+        if ($reqParam == "Register")
+        {
+            header("Location: /register");
+        }
+        elseif ($this->searchedEmail($var))
         {
             if (password_verify($password, $var->password))
             {
-                echo $this->view("pages/authenticatedUser.html", ["Email" => $email]);
+                session_start();
+                $_SESSION["email"] = $email;
+                $_SESSION["first_name"] = $var->first_name;
+                $_SESSION["last_name"] = $var->last_name;
+
+                //echo $this->view(["last_name" => "Vasile", "first_name" => "Lupul", "email" => $email]);
+                header("Location: /main-page");
             }
             else
             {

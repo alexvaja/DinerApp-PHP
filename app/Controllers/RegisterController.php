@@ -54,17 +54,22 @@ class RegisterController extends Controller
         $first_name = $_POST["registerFirstName"];
         $email = $_POST["registerEmail"];
         $password = $_POST["registerPassword"];
+        $reqParam = $_POST["submit"];
 
         $var = $user->find(["email" => $email]);
 
         //var_dump($user->find(["email" => $email]));
 
-        if($this->checkInputDataIsEmpty($last_name,$first_name,$email,$password))
+        if ($reqParam == "Back")
+        {
+            echo $this->view("pages/login.html");
+        }
+        elseif ($this->checkInputDataIsEmpty($last_name,$first_name,$email,$password))
         {
             if ($this->checkEmailIsUnique($var))
             {
                 $user->registerUser($last_name, $first_name, $email, $password);
-                echo $this->view("pages/authenticatedUser.html", ["second_name" => $last_name, "first_name" => $first_name, "email" => $email]);
+                echo $this->view("pages/main-page.html", ["second_name" => $last_name, "first_name" => $first_name, "email" => $email]);
             }
             else
             {

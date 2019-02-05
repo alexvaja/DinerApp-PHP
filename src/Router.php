@@ -8,6 +8,9 @@
 
 namespace Framework;
 
+//use App\Controllers\CategoryController;
+
+use App\Controller\CategoryController;
 
 class Router
 {

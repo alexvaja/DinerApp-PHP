@@ -21,19 +21,8 @@ class User extends Model
         Model::new(["second_name" => $second_name, "first_name" => $first_name, "email" => $email, "password" => $hashed_pass]);
     }
 
-//    public function searchForUserAtLogin(string $email, $password)
-//    {
-//        $pdo = $this->newDbCon();
-//        //$sql = "SELECT FROM" $this->table(email);
-//        $sql = 'SELECT * FROM ' . $this->table . ' WHERE ' . email . '=?' . paroa . '=?';
-//        $stmt = $pdo -> prepare($sql);
-//        $stmt -> execute([$email, $password]);
-//
-//        return $stmt->fetch();
-//    }
-
-
-    function searchForUserAtLogin (string $email, $password){
+    function searchForUserAtLogin (string $email, $password)
+    {
         $user = $this->getRowByField("email", $email);
         if ($user != null && password_verify($password, $user->password)){
             return true;
@@ -41,7 +30,8 @@ class User extends Model
         return false;
     }
 
-    public function getRowByField($field, $data){
+    public function getRowByField($field, $data)
+    {
         $db = $this->newDbCon();
         $sql = 'SELECT * FROM ' . $this->table . ' WHERE ' . $field . '=?';
         $stmt = $db->prepare($sql);

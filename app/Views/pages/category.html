@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Categorii</h1>
+
+    <form action = "main-page/category/action" method = "post">
+
+        <input type = "submit" name = "submit" value = "Add"/>
+        <input type = "submit" name = "submit" value = "Cancel"/>
+        <input type = "submit" name = "submit" value = "Save"/>
+
+        <br/>
+
+        <label>Name:</label>
+        <input type = "text" name = "inputCategoryName" size = "40"/>
+
+        <br/>
+
+        <label>Price:</label>
+        <input type = "text" name = "inputPriceCategory" size = "40"/>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> {{category_id}} </td>
+                        <td> {{category_name}} </td>
+                        <td> {{category_price}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

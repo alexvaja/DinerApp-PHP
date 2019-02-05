@@ -3,9 +3,6 @@ namespace App\Controllers;
 
 use Framework\Controller;
 
-/**
- * Class PageController
- */
 class PageController extends Controller
 {
     public function aboutUsAction()

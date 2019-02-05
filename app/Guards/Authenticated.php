@@ -8,12 +8,12 @@ class Authenticated implements Guard
     public function handle(array $params = null)
     {
         session_start();
-        if (!isset($_SESSION['username']))
+        if (!isset($_SESSION['email']))
             $this->reject();
     }
 
     public function reject()
     {
-        header("Location: /auth/login");
+        header("Location: /login");
     }
 }
