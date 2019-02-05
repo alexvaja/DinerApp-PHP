@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5bd1107a-ded2-4252-bfa7-867964d98b07" name="Default Changelist" comment="Shit">
       <change beforePath="$PROJECT_DIR$/app/Controllers/FoodController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/FoodController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/MainPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/MainPageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Food.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Food.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Views/pages/food.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/pages/food.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Views/pages/main-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/pages/main-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Controllers/FoodController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+            <state relative-caret-position="199">
+              <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
               <folding>
                 <element signature="e#115#135#0#PHP" expanded="true" />
               </folding>
@@ -338,12 +333,12 @@
       <workItem from="1549118942021" duration="7675000" />
       <workItem from="1549143183582" duration="6404000" />
       <workItem from="1549262376976" duration="27319000" />
-      <workItem from="1549356581901" duration="43008000" />
+      <workItem from="1549356581901" duration="43289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98502000" />
+    <option name="totallyTimeSpent" value="98783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1696" height="1026" extended-state="6" />
@@ -650,8 +645,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/FoodController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+        <state relative-caret-position="199">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
           <folding>
             <element signature="e#115#135#0#PHP" expanded="true" />
           </folding>

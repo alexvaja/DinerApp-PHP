@@ -33,6 +33,7 @@ class FoodController extends Controller
         }
         return false;
     }
+
     public function addFoodAction()
     {
         $food = new Food();
