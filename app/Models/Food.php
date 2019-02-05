@@ -18,4 +18,14 @@ class Food extends Model
         $vatr = ["food_name" => $food_name, "food_ingredients" => $food_ingredients, "food_price" => $food_price, "food_weight" => $food_weight];
         Model::new($vatr);
     }
+
+    public function deleteFoodFromTableById($id) : bool
+    {
+        return $this->delete($id);
+    }
+
+    public function updateFoodFromTableById(array $where, array $data) : bool
+    {
+        return $this->update($where, $data);
+    }
 }

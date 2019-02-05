@@ -53,5 +53,3 @@ class FoodController extends Controller
         }
     }
 }
-
-session_destroy();

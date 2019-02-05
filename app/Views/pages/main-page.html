@@ -17,19 +17,16 @@
                 <h6 class="px-3 pt-3">Navigation menu</h6>
                 <ul class="nav flex-column flex-nowrap text-truncate">
                     <li class="nav-item">
-                        <a class="nav-link active" href="">Add food</a>
+                        <a class="nav-link active" href="/food">Add food</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">View food</a>
+                        <a class="nav-link active" href="/main-page">View food</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">About us</a>
+                        <a class="nav-link active" href="/about-us">About us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">View orders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/food/modify">Modifica mancare</a>
                     </li>
 <!--                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <button type ="button" class = "btn btn-secondary" name="submit" value="LogOut"> Log out </button>-->
@@ -39,37 +36,35 @@
 
         <div class="col p-3">
             <form action="/main-page/action" method="post">
-            <!--<div>-->
-                <!--<header style="background: #000000; height: 100%; padding: 1em;">-->
-                    <!--<p align="right"><input type="submit" name="submit" value="LogOut"/></p>-->
-                <!--</header>-->
-            <!--</div>-->
+
                 <p align="right"><input type="submit" name="submit" value="LogOut" class="btn btn-outline-dark"/></p>
-                    <table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Ingredients</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Weight</th>
-                                <th scope="col">Edit</th>
-                                <th scope="col">Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for food in foods %}
-                                <tr>
-                                    <td>{{food.food_name}}</td>
-                                    <td>{{food.food_ingredients}}</td>
-                                    <td>{{food.food_price}}</td>
-                                    <td>{{food.food_weight}}</td>
-                                    <td><input type="submit" name="{{food.id}}" value="Edit"/></td>
-                                    <td><input type="submit" name="{{food.id}}" value="Delete"/></td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </form>
+
+                <table class="table tcolor table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Ingredients</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for food in foods %}
+                    <tr>
+                        <td>{{food.food_name}}</td>
+                        <td>{{food.food_ingredients}}</td>
+                        <td>{{food.food_price}}</td>
+                        <td>{{food.food_weight}}</td>
+                        <td><input type="submit" name="{{food.id}}" value="Edit" class="btn btn-outline-primary"/></td>
+                        <td><input type="submit" name="{{food.id}}" value="Delete" class="btn btn-outline-danger"/></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </form>
         </div>
     </div>
 </div>
@@ -79,13 +74,24 @@
 
 
 <style>
+
+    .tcolor{
+        background-color: #aa5316;
+        color: white;
+    }
+    .table-bordered{
+        border-color: black;
+    }
+
     :root {
         /* set the sidebar width */
         --sidebar-width: 15vw;
     }
+
     .bg-dark {
         background-color: #aa5316!important;
     }
+
     body {
         overflow-x: hidden;
 /*        padding-top: 55px;*/

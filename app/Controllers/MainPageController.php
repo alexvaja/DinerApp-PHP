@@ -28,10 +28,11 @@ class MainPageController extends Controller
         {
             case "Delete" :
             {
-                if ($foodModel->delete($id))
+                $wasDeleted = $foodModel->deleteFoodFromTableById($id);
+
+                if ($wasDeleted)
                 {
                     $foods = $foodModel->getAll();
-
                     echo $this->view("pages/main-page.html", ["foods" => $foods]);
                 }
                 else
@@ -41,9 +42,22 @@ class MainPageController extends Controller
                 }
                 break;
             }
-            case "Edit" :
+            case "Edit" : //termina aici!!!
             {
                 echo "Am intrat in edit";
+                $wasUpdated = "";
+
+
+                if ($wasUpdated)
+                {
+                    $foods = $foodModel->getAll();
+                    echo $this->view("pages/main-page.html", ["foods" => $foods]);
+                }
+                else
+                {
+                    $foods = $foodModel->getAll();
+                    echo $this->view("pages/main-page.html", ["foods" => $foods]);
+                }
 
                 break;
             }
