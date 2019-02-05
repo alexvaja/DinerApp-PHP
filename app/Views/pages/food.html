@@ -2,9 +2,161 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Food</title>
+    <title>Title</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../../public/mainPageCSS.css">
 </head>
 <body>
-    <h1>Mancare</h1>
+<div class="container-fluid px-0">
+    <div class="row collapse show no-gutters d-flex h-100 position-relative">
+        <div class="col-3 p-0 h-100 w-sidebar navbar-collapse collapse d-none d-md-flex sidebar">
+            <!-- fixed sidebar -->
+            <div class="navbar-dark bg-dark text-white position-fixed h-100 align-self-start w-sidebar">
+                <h6 class="px-3 pt-3">Navigation menu</h6>
+                <ul class="nav flex-column flex-nowrap text-truncate">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="">Adauga mancare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Sterge mancare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/food/modify">Modifica mancare</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col p-3">
+            <div id="addFood">
+                <h3 class="text-center text-white pt-5"></h3>
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form action="/food/add" method="post">
+                                <div class="form-group">
+                                    <label class="text-info text-white">{{mes}}</label>
+                                    <label class="text-info text-white"> Nume mancare: </label>
+                                    <input type="text" name="foodName" value="{{name}}" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="text-info text-white"> Ingrediente: </label>
+                                    <input type="text" name="foodIngredients" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="text-info text-white"> Pret: </label>
+                                    <input type="text" name="foodPrice" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="text-info text-white"> Gramaj: </label>
+                                    <input type="text" name="foodWeight" class="form-control">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" name="submit" value="Adauga mancare"
+                                           class="btn btn-info btn-lg btn-block">
+                                    <input type="reset" name="submit" value="Reset"
+                                           class="btn btn-secondary btn-lg btn-block">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+
+
+<style>
+    :root {
+        /* set the sidebar width */
+        --sidebar-width: 15vw;
+    }
+
+    .bg-dark {
+        background-color: #aa5316 !important;
+    }
+
+    body {
+        overflow-x: hidden;
+        padding-top: 55px;
+    }
+
+    body {
+        background: url('https://static1.squarespace.com/static/5557a76ce4b01acf2bf98039/t/557727b6e4b03b6cbf5d0506/1433872433298/bigstock-Coffee-Shop-Blur-Background-Wi-86599157.jpg?format=2500w') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .w-sidebar {
+        width: var(--sidebar-width);
+        max-width: var(--sidebar-width);
+
+        top: 0;
+        z-index: 100;
+    }
+
+    .row.collapse {
+        margin-left: calc(-1 * var(--sidebar-width));
+        left: 0;
+        transition: margin-left .15s linear;
+    }
+
+    .row.collapse.show {
+        margin-left: 0 !important;
+    }
+
+    .row.collapsing {
+        margin-left: calc(-1 * var(--sidebar-width));
+        left: -0.05%;
+        transition: all .15s linear;
+    }
+
+    @media (max-width: 300px) {
+
+        .row.collapse,
+        .row.collapsing {
+            margin-left: 0 !important;
+            left: 0 !important;
+            overflow: visible;
+        }
+
+        .row > .sidebar.collapse {
+            display: flex !important;
+            margin-left: -100% !important;
+            transition: all .3s ease;
+            position: fixed;
+            z-index: 1050;
+            max-width: 0;
+            min-width: 0;
+            flex-basis: auto;
+        }
+
+        .row > .sidebar.collapse.show {
+            margin-left: 0 !important;
+            width: 100%;
+            max-width: 100%;
+            min-width: initial;
+        }
+
+        .row > .sidebar.collapsing {
+            display: flex !important;
+            margin-left: -10% !important;
+            transition: all .3s ease !important;
+            position: fixed;
+            z-index: 1050;
+            min-width: initial;
+        }
+    }
+</style>

@@ -6,6 +6,7 @@ $routes = [
 
     '/register' => ['controller' => 'RegisterController', 'action' => 'registerPage'],
     '/register/auth' => ['controller' => 'RegisterController', 'action' => 'registerNewUser'],
+    '/' => ['controller' => 'LoginController', 'action' => 'loginPage'],
 
     '/login' => ['controller' => 'LoginController', 'action' => 'loginPage'],
     '/login/auth' =>['controller' => 'LoginController', 'action' => 'loginUser'],
@@ -16,8 +17,12 @@ $routes = [
     '/main-page/category' => ['controller' => 'CategoryController', 'action' => 'loadCategoryPage'],
     '/main-page/category/action' => ['controller' => 'CategoryController', 'action' => 'addCategory'],
 
-    '/main-page/food' => ['controller' => 'FoodController', 'action' => 'loadFoodPage', 'guard' => 'Authenticated'],
-    '/main-page/food/' => ['controller' => 'FoodController', 'action' => 'loadFoodPage', 'guard' => 'Authenticated'],
+
+    '/food' => ['controller' => 'FoodController', 'action' => 'loadFoodPage', 'guard' => 'Authenticated'],
+    '/food/' => ['controller' => 'FoodController', 'action' => 'loadFoodPage', 'guard' => 'Authenticated'],
+    '/food/add' => ['controller' => 'FoodController', 'action' => 'addFoodAction', 'guard' => 'Authenticated'],
+    '/food/food' => ['controller' => 'FoodController', 'action' => 'loadFoodPage', 'guard' => 'Authenticated'],
+    '/food/modify' => ['controller' => 'FoodController', 'action' => 'modifyFoodPage', 'guard' => 'Authenticated'],
 
     //aici injur decent clasa router.
 ];

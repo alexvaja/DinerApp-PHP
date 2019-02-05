@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use Framework\Controller;
-
+use App\Models\Food;
 class MainPageController extends Controller
 {
 
