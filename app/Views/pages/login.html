@@ -3,24 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel = "stylesheet" href="../../../public/stylesheet.css">
 </head>
 <!--Ce trec la action imi trimite datele din form catre metoda
 pe care o am in router pentru login/auth-->
 <body>
-    <form action="/login/auth" method="post">
-
-        <label>Email:</label>
-        <input type = "text" name = "loginEmail">
-
-        <br/><br/>
-
-        <label>Password:</label>
-        <input type = "password" name = "loginPassword">
-
-        <br/><br/>
-
-        <input type = "submit" name = "submit" value = "Login">
-        <input type = "submit" name = "submit" value = "Register">
-    </form>
+<div id="login">
+    <h3 class="text-center text-white pt-5">Bun venit pe pagina de login </h3>
+    <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+                <form action="/login/auth" method="post">
+                    <div class="form-group">
+                        <label class="text-info text-white">Email</label>
+                        <input type="text" name="loginEmail" class="form-control">
+                    </div>
+                    <div>
+                         <label>Password:</label>
+                         <input type="password" name="loginPassword" class="form-control">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-info btn-lg btn-block" name="submit" value="Login">
+                    </div>
+                    <div id="register-link" class="text-right">
+                        <input type="submit" name="submit" class="btn btn-secondary" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+
+<style>
+    body {
+        background: url('https://static1.squarespace.com/static/5557a76ce4b01acf2bf98039/t/557727b6e4b03b6cbf5d0506/1433872433298/bigstock-Coffee-Shop-Blur-Background-Wi-86599157.jpg?format=2500w') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100vh;
+    }
+    #login .container #login-row #login-column #login-box {
+        margin-top: 120px;
+        max-width: 600px;
+        height: 320px;
+        border: 1px solid #9C9C9C;
+        background-color: #EAEAEA;
+    }
+    #login .container #login-row #login-column #login-box #login-form {
+        padding: 20px;
+    }
+    #login .container #login-row #login-column #login-box #login-form #register-link {
+        margin-top: -85px;
+    }
+</style>
