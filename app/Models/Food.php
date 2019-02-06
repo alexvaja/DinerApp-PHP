@@ -28,4 +28,9 @@ class Food extends Model
     {
         return $this->update($where, $data);
     }
+
+    public function getAllFoodFromTable()
+    {
+        return $this->getAll();
+    }
 }

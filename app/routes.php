@@ -19,6 +19,13 @@ $routes = [
     '/main-page-user/order' => ['controller' => 'UserController', 'action' => 'loadOrder'],
     '/main-page-user/order/saved' => ['controller' => 'UserController', 'action' => 'addOrder'],
     '/main-page-user/main-page-user/order/saved' => ['controller' => 'UserController', 'action' => 'addOrder'],
+    '/main-page-user/view-food' => ['controller' => 'UserController', 'action' => 'viewAllFood'],
+    '/main-page-user/view-food/action' => ['controller' => 'UserController', 'action' => 'viewAllFood'],
+
+    '/user' => ['controller' => 'UserController', 'action' => 'loadUser'],
+    '/user/action' => ['controller' => 'UserController', 'action' => 'loadUserAction'],
+    '/delete' => ['controller' => 'UserController', 'action' => 'deleteUser'],
+    '/delete/action' => ['controller' => 'UserController', 'action' => 'deleteUserAction'],
 
     '/main-page/category' => ['controller' => 'CategoryController', 'action' => 'loadCategoryPage'],
     '/main-page/category/action' => ['controller' => 'CategoryController', 'action' => 'addCategory'],

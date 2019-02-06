@@ -17,7 +17,7 @@
                 <h3 align="center" class="px-3 pt-3">Menu</h3>
                 <ul class="nav flex-column flex-nowrap text-truncate">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/view-food">View food</a>
+                        <a class="nav-link active" href="/main-page-user/view-food">View food</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/main-page-user/order">Add Order</a>
@@ -37,44 +37,17 @@
 
         <div class="col p-3">
             <div id="addFood">
-                <form action="main-page-user/order/saved" method="post">
+                <form action="/user/action" method="post">
                     <p align="right"><input type="submit" name="submit" value="LogOut" class="btn btn-outline-dark"/></p>
 
-                    <div class="form-group">
-                        <label class="label"> Date: </label>
-                        <input type="date" name="orderDate" class="form-control"/>
-                    </div>
-
-                    <input type="submit" name="submit" value="Save" class="btn btn-outline-primary"/>
-
-                    <br/><br/>
-
-                    <table class="table tcolor table-bordered">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Ingredients</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Weight</th>
-                            <th> Checked </th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-                        {% for food in foods %}
-                        <tr>
-                            <td>{{food.food_name}}</td>
-                            <td>{{food.food_ingredients}}</td>
-                            <td>{{food.food_price}}</td>
-                            <td>{{food.food_weight}}</td>
-                            <td><input type="checkbox" name="checkboxValue" value="{{food.id}}" class="btn btn-outline-primary"/></td>
-                        </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
+                    <label class="label"> Email: {{user.email}}</label>
+                    <br/>
+                    <label class="label"> First name: {{user.first_name}}</label>
+                    <br/>
+                    <label class="label"> Last name: {{user.second_name}}</label>
+                    <br/>
+                    <input type="submit" name="submit" value="Delete account" class="btn btn-outline-danger"/>
                 </form>
-
-
             </div>
         </div>
     </div>
@@ -95,12 +68,6 @@
     .label {
         color: white;
     }
-
-    .success {background-color: #4CAF50;} /* Green */
-    .info {background-color: #2196F3;} /* Blue */
-    .warning {background-color: #ff9800;} /* Orange */
-    .danger {background-color: #f44336;} /* Red */
-    .other {background-color: #e7e7e7; color: black;} /* Gray */
 
     :root {
         /* set the sidebar width */

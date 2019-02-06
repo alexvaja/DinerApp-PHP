@@ -17,19 +17,19 @@
                 <h3 align="center" class="px-3 pt-3">Menu</h3>
                 <ul class="nav flex-column flex-nowrap text-truncate">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/view-food">View food</a>
+                        <a class="nav-link active" href="/main-page-user/view-food">View food</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/main-page-user/order">Add Order</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">View Order</a>
+                        <a class="nav-link active" href="/main-page-user">View Order</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">View Profile</a>
+                        <a class="nav-link active" href="/user">View Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/food/modify">About Us</a>
+                        <a class="nav-link active" href="/about-us">About Us</a>
                     </li>
                 </ul>
             </div>
@@ -40,13 +40,25 @@
                 <form action="main-page-user/action" method="post">
                     <p align="right"><input type="submit" name="submit" value="LogOut" class="btn btn-outline-dark"/></p>
 
-                    <table>
-                        <thead>
-
+                    <table class="table tcolor table-bordered">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Date</th>
+                        </tr>
                         </thead>
 
                         <tbody>
-
+                        {% for order in orders %}
+                        <tr>
+                            <td>{{order.id_food}}</td>
+                            <td>{{order.id_food}}</td>
+                            <td>{{order.quantity}}</td>
+                            <td>{{order.date}}</td>
+                        </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
 
@@ -62,6 +74,18 @@
 
 
 <style>
+
+    .tcolor{
+        background-color: #aa5316;
+        color: white;
+    }
+    .table-bordered{
+        border-color: black;
+    }
+    .label {
+        color: white;
+    }
+
     :root {
         /* set the sidebar width */
         --sidebar-width: 15vw;

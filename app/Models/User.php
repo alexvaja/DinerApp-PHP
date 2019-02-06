@@ -38,4 +38,9 @@ class User extends Model
         $stmt->execute([$data]);
         return $stmt->fetch();
     }
+
+    public function deleteUserById($id)
+    {
+        return $this->delete($id);
+    }
 }
