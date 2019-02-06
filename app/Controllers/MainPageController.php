@@ -7,7 +7,7 @@ use App\Models\Food;
 class MainPageController extends Controller
 {
 
-    public function loadMainPage()
+    public function loadAdminMainPage()
     {
         session_start();
         $foodModel = new Food();

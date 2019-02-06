@@ -12,26 +12,29 @@
 pe care o am in router pentru login/auth-->
 <body>
 <div id="login">
-    <h3 class="text-center text-white pt-5">Bun venit pe pagina de login </h3>
+
+    <h1 class="text-center text-white pt-5"> Welcome to login page </h1>
+
     <div id="login-row" class="row justify-content-center align-items-center">
         <div id="login-column" class="col-md-6">
             <div id="login-box" class="col-md-12">
+
                 <form action="/login/auth" method="post">
+                    <label class="label danger"> {{message}} </label>
+
                     <div class="form-group">
-                        <label class="text-info text-white">Email</label>
+                        <label class="label"> Email:</label>
                         <input type="text" name="loginEmail" class="form-control">
                     </div>
-                    <div>
-                         <label>Password:</label>
+
+                    <div class="form-group">
+                         <label class="label"> Password: </label>
                          <input type="password" name="loginPassword" class="form-control">
                     </div>
-                    <br>
-                    <br>
+
                     <div class="form-group">
-                        <input type="submit" class="btn btn-info btn-lg btn-block" name="submit" value="Login">
-                    </div>
-                    <div id="register-link" class="text-right">
-                        <input type="submit" name="submit" class="btn btn-secondary" value="Register">
+                        <input type="submit" name="submit" value="Login" class="btn btn-secondary btn-lg btn-block btn-outline-primary"/>
+                        <input type="submit" name="submit" value="Register" class="btn btn-secondary btn-lg btn-block btn-outline-danger"/>
                     </div>
                 </form>
             </div>
@@ -42,6 +45,20 @@ pe care o am in router pentru login/auth-->
 </html>
 
 <style>
+
+    .label {
+        color: white;
+    }
+
+    .success {background-color: #4CAF50;} /* Green */
+    .info {background-color: #2196F3;} /* Blue */
+    .warning {background-color: #ff9800;} /* Orange */
+    .danger {background-color: #f44336;} /* Red */
+    .other {background-color: #e7e7e7; color: black;} /* Gray */
+    :root {
+        /* set the sidebar width */
+        --sidebar-width: 15vw;
+    }
     body {
         background: url('https://static1.squarespace.com/static/5557a76ce4b01acf2bf98039/t/557727b6e4b03b6cbf5d0506/1433872433298/bigstock-Coffee-Shop-Blur-Background-Wi-86599157.jpg?format=2500w') no-repeat center center fixed;
         -webkit-background-size: cover;

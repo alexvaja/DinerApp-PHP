@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Food</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -14,22 +14,23 @@
         <div class="col-3 p-0 h-100 w-sidebar navbar-collapse collapse d-none d-md-flex sidebar">
             <!-- fixed sidebar -->
             <div class="navbar-dark bg-dark text-white position-fixed h-100 align-self-start w-sidebar">
-                <h6 class="px-3 pt-3">Navigation menu</h6>
+                <h3 align="center" class="px-3 pt-3">Menu</h3>
                 <ul class="nav flex-column flex-nowrap text-truncate">
                     <li class="nav-item">
                         <a class="nav-link active" href="/food">Add food</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link active" href="/main-page">View food</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">View orders</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link active" href="/about-us">About us</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">View orders</a>
-                    </li>
-                    <!--                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                                        <button type ="button" class = "btn btn-secondary" name="submit" value="LogOut"> Log out </button>-->
                 </ul>
             </div>
         </div>
@@ -39,38 +40,37 @@
             <p align="right"><input type="submit" name="submit" value="LogOut" class="btn btn-outline-dark"/></p>
 
             <div id="addFood">
-                <h3 class="text-center text-white pt-5"></h3>
+                <br/>
+                <!--<h3 class="text-center text-white pt-5"></h3>-->
                 <div id="login-row" class="row justify-content-center align-items-center">
                     <div id="login-column" class="col-md-6">
                         <div id="login-box" class="col-md-12">
                             <form action="/food/add" method="post">
+                                <label class="label danger"> {{message}} </label>
+
                                 <div class="form-group">
-                                    <label class="text-info text-white">{{mes}}</label>
-                                    <label class="text-info text-white"> Nume mancare: </label>
-                                    <input type="text" name="foodName" value="{{name}}" class="form-control">
+                                    <label class="text-info text-white"><span class="label"> Name: </span></label>
+                                    <input type="text" name="foodName" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="text-info text-white"> Ingrediente: </label>
+                                    <label class="label"> Ingredients: </label>
                                     <input type="text" name="foodIngredients" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="text-info text-white"> Pret: </label>
+                                    <label class="label"> Price: </label>
                                     <input type="text" name="foodPrice" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="text-info text-white"> Gramaj: </label>
+                                    <label class="label"> Weight: </label>
                                     <input type="text" name="foodWeight" class="form-control">
-
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="submit" name="submit" value="Adauga mancare"
-                                           class="btn btn-info btn-lg btn-block">
-                                    <input type="reset" name="submit" value="Reset"
-                                           class="btn btn-secondary btn-lg btn-block">
+                                    <input type="submit" name="submit" value="Add" class="btn btn-secondary btn-lg btn-block btn-outline-primary"/>
+                                    <input type="reset" name="submit" value="Reset" class="btn btn-secondary btn-lg btn-block btn-outline-danger"/>
                                 </div>
                             </form>
                         </div>
@@ -85,6 +85,16 @@
 
 
 <style>
+
+    .label {
+        color: white;
+    }
+
+    .success {background-color: #4CAF50;} /* Green */
+    .info {background-color: #2196F3;} /* Blue */
+    .warning {background-color: #ff9800;} /* Orange */
+    .danger {background-color: #f44336;} /* Red */
+    .other {background-color: #e7e7e7; color: black;} /* Gray */
     :root {
         /* set the sidebar width */
         --sidebar-width: 15vw;

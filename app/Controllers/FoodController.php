@@ -50,7 +50,7 @@ class FoodController extends Controller
         }
         else
         {
-            echo $this->view("pages/food.html", ["mes" => "Va rugam completati toate campurile"]);
+            echo $this->view("pages/food.html", ["message" => "Please complete all fields!"]);
         }
     }
 }
