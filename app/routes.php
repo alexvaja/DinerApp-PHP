@@ -15,6 +15,10 @@ $routes = [
     '/main-page/action' => ['controller' => 'MainPageController', 'action' => 'mainPageAction', 'guard' => 'Authenticated'],
 
     '/main-page-user' => ['controller' => 'UserController', 'action' => 'loadUserMainPage'],
+    '/main-page-user/action' => ['controller' => 'UserController', 'action' => 'userPageAction'],
+    '/main-page-user/order' => ['controller' => 'UserController', 'action' => 'loadOrder'],
+    '/main-page-user/order/saved' => ['controller' => 'UserController', 'action' => 'addOrder'],
+    '/main-page-user/main-page-user/order/saved' => ['controller' => 'UserController', 'action' => 'addOrder'],
 
     '/main-page/category' => ['controller' => 'CategoryController', 'action' => 'loadCategoryPage'],
     '/main-page/category/action' => ['controller' => 'CategoryController', 'action' => 'addCategory'],

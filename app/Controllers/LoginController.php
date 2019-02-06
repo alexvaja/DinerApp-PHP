@@ -57,20 +57,22 @@ class LoginController extends Controller
                             if ($var->user_type == "ADMIN")
                             {
                                 session_start();
-                                $_SESSION["email"] = $email;
-                                $_SESSION["first_name"] = $var->first_name;
-                                $_SESSION["last_name"] = $var->last_name;
-                                $_SESSION["user_type"] = "ADMIN";
+                                $_SESSION["user"] = $var;
+//                                $_SESSION["email"] = $email;
+//                                $_SESSION["first_name"] = $var->first_name;
+//                                $_SESSION["last_name"] = $var->last_name;
+//                                $_SESSION["user_type"] = "ADMIN";
 
                                 header("Location: /main-page");
                             }
                             elseif ($var->user_type == "USER")
                             {
                                 session_start();
-                                $_SESSION["email"] = $email;
-                                $_SESSION["first_name"] = $var->first_name;
-                                $_SESSION["last_name"] = $var->last_name;
-                                $_SESSION["user_type"] = "USER";
+                                $_SESSION["user"] = $var;
+//                                $_SESSION["email"] = $email;
+//                                $_SESSION["first_name"] = $var->first_name;
+//                                $_SESSION["last_name"] = $var->last_name;
+//                                $_SESSION["user_type"] = "USER";
 
                                 header("Location: /main-page-user");
                             }
